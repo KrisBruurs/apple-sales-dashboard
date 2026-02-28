@@ -1,6 +1,9 @@
-.PHONY: download_data transform_data run_dashboard remove_data all
+.PHONY: install download_data transform_data run_dashboard remove_data all
 
-all: download_data transform_data run_dashboard
+all: install download_data transform_data run_dashboard
+
+install: requirements.txt
+	python -m pip install -r requirements.txt
 
 download_data: download_data.py
 	python download_data.py
